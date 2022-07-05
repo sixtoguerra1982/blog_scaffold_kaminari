@@ -23,7 +23,7 @@ class PostsController < ApplicationController
   def create
 
     @post = Post.new(post_params)
-    byebug
+    # byebug
     respond_to do |format|
       if @post.save
         format.html { redirect_to post_url(@post), notice: "Post was successfully created." }
@@ -66,6 +66,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :description)
+      params.require(:post).permit(:title, :description, :author)
     end
 end
