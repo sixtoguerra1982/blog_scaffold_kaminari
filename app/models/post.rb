@@ -2,7 +2,7 @@ class Post < ApplicationRecord
     validates :title, presence: true
     validates :description, presence: true
     validates :author, presence: true
-
+    validates :state, presence: true
     enum state: [:draft, :published]
 
     def self.load

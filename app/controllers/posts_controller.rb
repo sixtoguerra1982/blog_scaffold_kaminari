@@ -3,7 +3,12 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all.page(params[:page])
+    # @posts = Post.all.page(params[:page])
+  
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(distinct: false)
+
+    
   end
 
   # GET /posts/1 or /posts/1.json
@@ -23,6 +28,7 @@ class PostsController < ApplicationController
   def create
 
     @post = Post.new(post_params)
+    @post.state = "published"
     # byebug
     respond_to do |format|
       if @post.save

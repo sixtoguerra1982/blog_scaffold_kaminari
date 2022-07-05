@@ -2,6 +2,16 @@
 
 <h1>Posts</h1>
 
+<%= search_form_for @q do |f| %>
+
+  <%= f.label :author %>
+  <%= f.search_field :author %>
+
+  <%= f.submit %>
+<% end %>
+
+
+
 <table>
   <thead>
     <tr>
@@ -26,7 +36,7 @@
   </tbody>
 </table>
 
-<%= paginate @posts %>
+<%# <%= paginate @posts %> %>
 
 <br>
 
