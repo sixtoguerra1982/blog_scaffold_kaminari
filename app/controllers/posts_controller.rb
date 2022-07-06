@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     @q = Post.ransack(params[:q])
     @posts = @q.result(distinct: false).page(params[:page])
 
-    
+    # byebug
   end
 
   # GET /posts/1 or /posts/1.json
