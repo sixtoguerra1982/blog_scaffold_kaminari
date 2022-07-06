@@ -4,8 +4,16 @@
 
 <%= search_form_for @q do |f| %>
 
-  <%= f.label :author %>
-  <%= f.search_field :author %>
+  <%= f.label :author_cont , "IGUAL" %>
+  <%= f.search_field :author_cont %>
+
+  <%= f.label :author_not_eq , "NO IGUAL" %>  
+  <%= f.search_field :author_not_eq %>
+
+  <%= f.label :description_cont %>  
+  <%= f.search_field :description_cont %>
+
+  <%# <%= f.select(:state_eq, options_for_select([:draft, :published]))  %>
 
   <%= f.submit %>
 <% end %>
@@ -36,7 +44,7 @@
   </tbody>
 </table>
 
-<%# <%= paginate @posts %> %>
+<%= paginate @posts %>
 
 <br>
 

@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+30.times do |i|
+    Post.create(
+        title: "Titulo #{i+1}",
+        description: "Description" * (i + i) ,
+        author: "Sixto",
+        state: "published"
+    )
+    puts "Creando el registro #{i+1}"
+end

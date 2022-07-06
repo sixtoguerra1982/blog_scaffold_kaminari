@@ -6,7 +6,7 @@ class PostsController < ApplicationController
     # @posts = Post.all.page(params[:page])
   
     @q = Post.ransack(params[:q])
-    @posts = @q.result(distinct: false)
+    @posts = @q.result(distinct: false).page(params[:page])
 
     
   end
