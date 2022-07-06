@@ -14,7 +14,8 @@
   <%= f.search_field :description_cont %>
 
   <%# <%= f.select(:state_eq, options_for_select([:draft, :published]))  %>
-
+  <%= f.select(:state_eq, options_for_select({ "draft" => "0", "published" => "1" }),{ include_blank: true }) %>
+  
   <%= f.submit %>
 <% end %>
 
